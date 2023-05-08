@@ -83,7 +83,7 @@ for (let i = 0; i < data.length; i++) {
 
 }
 for (let i = 0; i < data.length; i++) {
-    console.log("Persona " + (i + 1) + ":\n");
+    console.log("\nPersona " + (i + 1) + ":\n");
     console.log(persone[i].ToString());
 }
 gfsEsporta.WriteFile("Nome,Cognome,data_di_nascita");
