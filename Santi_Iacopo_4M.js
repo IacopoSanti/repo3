@@ -18,14 +18,19 @@ class GestioneFileSynk {
     };
     WriteFile(msg) {
         try {
-            this.fs.writeFileSync(this.nomeFile, msg + " \r\n", { flag: 'a+' });
+            this.fs.writeFileSync(this.nomeFile, msg + " \r\n", { flag: 'w+' });
             // file written successfully
         } catch (err) {
             console.error(err);
         }
     };
     AppendFile(msg) {
-        ////?????????????????????
+        try {
+            this.fs.writeFileSync(this.nomeFile, msg + " \r\n", { flag: 'a+' });
+            // file written successfully
+        } catch (err) {
+            console.error(err);
+        }
     };
 }
 
@@ -65,7 +70,7 @@ class Persona {
 }
 
 const persone = [];
-let gFs = new GestioneFileSynk("./src/persona - Foglio1.csv");
+let gFs = new GestioneFileSynk("./text.csv");
 let gfsEsporta = new GestioneFileSynk("esporta.csv");
 let data = gFs.ReadFile().split(/\r?\n/);
 data.splice(0, 1);
@@ -83,6 +88,22 @@ for (let i = 0; i < data.length; i++) {
 }
 gfsEsporta.WriteFile("Nome,Cognome,data_di_nascita");
 for (let i = 0; i < persone.length ;i++){
-    gfsEsporta.WriteFile(persone[i].ToCsv());
-    
+    gfsEsporta.AppendFile(persone[i].ToCsv());
 }
+let ricerca = "pallino";
+let contatore = 0;
+
+for (let i = 0; i < data.length; i++) {
+    var riga = data[i].split(",");
+    for (let j = 0; j < riga.length; j++) {
+        var parola = riga[j];
+        if (ricerca == parola) {
+            contatore++;
+            
+        }
+        
+    }
+
+}
+
+console.log("Il numero di occorrenze della parola " + ricerca + " sono " + contatore);
