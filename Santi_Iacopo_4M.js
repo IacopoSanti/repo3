@@ -106,4 +106,4 @@ for (let i = 0; i < data.length; i++) {
 
 }
 
-console.log("Il numero di occorrenze della parola " + ricerca + " sono " + contatore);
+console.log("\nIl numero di occorrenze della parola " + ricerca + " sono " + contatore);
