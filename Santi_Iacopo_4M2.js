@@ -62,8 +62,8 @@ class Persona {
     ToString() {
         return "Nome : " + this.nome + "\nCognome : " + this.cognome + "\nData nascita : " + this.data_nascita;
     }
-    ToCsv(){
-        return this.nome + "," + this.cognome + "," + this.data_nascita;
+    ToJson(){
+        return  { this:nome + "," + this.cognome + "," + this.data_nascita };
     }
 }
 
