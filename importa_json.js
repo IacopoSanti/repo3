@@ -1,3 +1,10 @@
-var jsonStringa = JSON.stringify(/home/santi/code/repo3-1/json_da_importare.json);
-console.log(jsonStringa); 
-  
+var jsonObject = {
+  nome:"John",
+  cognome:"Pork",
+  età:32,
+  hobby:["giocare","cucinare","ballare"]
+};
+
+var jsonString = JSON.stringify(jsonObject);
+
+console.log(jsonString); 
