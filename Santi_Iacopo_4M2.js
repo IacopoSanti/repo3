@@ -63,7 +63,7 @@ class Persona {
         return "Nome : " + this.nome + "\nCognome : " + this.cognome + "\nData nascita : " + this.data_nascita;
     }
     ToJson(){
-        return  { this:nome + "," + this.cognome + "," + this.data_nascita };
+        return  this.nome + "," + this.cognome + "," + this.data_nascita; 
     }
 }
 
@@ -85,7 +85,7 @@ for (let i = 0; i < data.length; i++) {
 }
 gfsEsporta.WriteFile("Nome,Cognome,data_di_nascita");
 for (let i = 0; i < persone.length ;i++){
-    gfsEsporta.AppendFile(persone[i].ToCsv());
+    gfsEsporta.AppendFile(persone[i].ToJson());
 }
 let ricerca = "pallino";
 let contatore = 0;
