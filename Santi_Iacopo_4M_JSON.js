@@ -22,3 +22,6 @@ class Istituzione {
     }
 
 }
+
+parsePersona(Persona.json);
+parseIstituzione(Istituzione.json);
