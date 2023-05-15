@@ -33,37 +33,37 @@ class GestioneFileSynk {
 }
 
 class Persona {
-    #p_nome;
-    #p_cognome;
-    #p_data_nascita;
+    p_nome;
+    p_cognome;
+    p_data_nascita;
     constructor(nome, cognome, data_nascita) {
         this.nome = nome;
         this.cognome = cognome;
         this.data_nascita = data_nascita;
     }
     set nome(name) {
-        this.#p_nome = name;
+        this.p_nome = name;
     }
     set cognome(surname) {
-        this.#p_cognome = surname;
+        this.p_cognome = surname;
     }
     set data_nascita(date) {
-        this.#p_data_nascita = date;
+        this.p_data_nascita = date;
     }
     get nome() {
-        return this.#p_nome;
+        return this.p_nome;
     }
     get cognome() {
-        return this.#p_cognome;
+        return this.p_cognome;
     }
     get data_nascita() {
-        return this.#p_data_nascita;
+        return this.p_data_nascita;
     }
     ToString() {
         return "Nome : " + this.nome + "\nCognome : " + this.cognome + "\nData nascita : " + this.data_nascita;
     }
-    ToJson(){
-        return  this.nome + "," + this.cognome + "," + this.data_nascita; 
+    ToCsv(){
+        return this.nome + "," + this.cognome + "," + this.data_nascita;
     }
 }
 
@@ -85,7 +85,7 @@ for (let i = 0; i < data.length; i++) {
 }
 gfsEsporta.WriteFile("Nome,Cognome,data_di_nascita");
 for (let i = 0; i < persone.length ;i++){
-    gfsEsporta.AppendFile(persone[i].ToJson());
+    gfsEsporta.AppendFile(persone[i].ToCsv());
 }
 let ricerca = "pallino";
 let contatore = 0;
