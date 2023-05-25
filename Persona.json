@@ -1,0 +1,8 @@
+[
+    {
+        "nome":"John",
+        "cognome":"Pork",
+        "età":32,
+        "hobby":["giocare","cucinare","ballare"]
+    }
+]
